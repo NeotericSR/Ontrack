@@ -1,0 +1,61 @@
+$primary-color: #1D7874;
+
+.App { 
+  text-align: center;
+
+  &__header {
+    position: fixed; 
+    top:0;
+    background-color:$primary-color;
+    width:100vw;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  &__book {
+      padding-top: 20vh;
+      list-style-type: none;
+      display: flex;
+      flex-wrap: nowrap;
+
+      & > span{
+          width:10vw;
+          margin:1vw;
+          text-align: center;
+      }
+  }
+
+  &__search {
+    background: black;
+    margin-bottom:10px;
+    width:90vw;
+    height:40px;
+    color:white;
+  }
+
+  .pagination {
+      padding-top: 20vh;
+      list-style-type: none;
+      display:flex;
+      flex-wrap: wrap;
+      width: 80vw;
+
+      &__listitem {
+          width:1vw;
+          margin:1vw;
+          text-align: center;
+          padding: 20px;
+          background-color: $primary-color;
+      }
+      &__link{
+        color: white;
+      }
+  }
+}
+
+
