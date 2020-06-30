@@ -48,8 +48,16 @@ class App extends Component {
 
  updateSearch = (event) => {
    this.setState({search: event.target.value.substr(0, 20)});
-   this.setState((state)=>{filters: state.filters.push(state.search)});
-   console.log(this.state.filters)
+ }
+
+ addToFilter = (event) => {
+  if(event.key === 'Enter')
+  {
+    const list = [];
+    list.push(this.state.search);
+    this.setState({filters: list});
+    this.setState({search: ''});
+  }
  }
 
   render()
@@ -60,7 +68,7 @@ class App extends Component {
       <div className="App">
         <header className="App__header">
           <h3>OnTrack Assignment: Books</h3>
-         <Search value={this.state.search} updateSearch={this.updateSearch}/>
+         <Search value={this.state.search} updateSearch={this.updateSearch} addToFilter={this.addToFilter}/>
         </header>
         <BookList books={this.state.books} loading={this.state.loading} />
         <Pagination booksPerPage={this.state.booksPerPage} totalBooks={this.state.count} paginate={paginate}/>
